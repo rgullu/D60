@@ -17,6 +17,7 @@ echo -e "\e[34mText in Blue Color"
 echo -e "\e[35mText in Magenta Color"
 echo -e "\e[36mText in Cyan Color"
 
+#Wiki for color codes.
 #https://misc.flogisoft.com/bash/tip_colors_and_formatting.
 
 # Color always follows.
