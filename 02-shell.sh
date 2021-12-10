@@ -23,3 +23,5 @@ echo -e "\e[36mText in Cyan Color"
 echo -e "\e[31mText in red color\e[0m"
 echo Text in normal color
 echo -e "Normal \e[5mBlink"
+
+
