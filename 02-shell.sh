@@ -7,3 +7,4 @@ echo Welcome
 # ESC sequence, \n (new line), \e (new tab).
 echo -e "Hello World\nWelcome"
 
+echo -e "word1\tword2"
