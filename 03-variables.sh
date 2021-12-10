@@ -10,3 +10,6 @@ echo value of a = ${a}
 x=10
 y=20
 echo ${x}x${y} = 200
+
+DATE=2021-10-20
+echo Good Morning, Welcome, Today date is $DATE
