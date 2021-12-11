@@ -4,6 +4,9 @@
 function abc(){
   echo I am a funciton abc
 }
-
+xyz(){
+  echo I am a funciton xyz
+}
 # Calling main funciton
 abc
+xyz
