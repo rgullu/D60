@@ -8,7 +8,7 @@ Stat(){
     echo -e "\e[1;32mSUCCESS\e[0m"
   else
     echo -e "\e[1;31mFAILURE\e[0m"
-    echo -e "\e[1;31mHey check the logs from the $LOG file\e[0m"
+    echo -e "\e[1;33mHey check the logs from the $LOG file\e[0m"
     exit 1
   fi
 }
