@@ -8,7 +8,7 @@ Stat $?
 Print "Add RoboShop User"
 id roboshop &>>$LOG
 if [ $? -eq 0 ]; then
-  echo "User RoboShop already exists"
+  echo "User RoboShop already exists" &>>$LOG
 else
   useradd roboshop &>>$LOG
 fi
