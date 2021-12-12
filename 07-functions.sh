@@ -3,6 +3,7 @@
 ## So that is the reason always we see functions at the starting stage.
 function abc(){
   echo I am a funciton abc
+  a=100
   echo a in function = $a
   b=20
 }
