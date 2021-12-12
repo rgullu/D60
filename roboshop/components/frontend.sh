@@ -16,13 +16,13 @@ rm -f $LOG
 
 Print "Installing Nginx"
 yum install nginx -y &>>$LOG
-
 Stat $?
-
 Print "Enabling Nginx"
 systemctl enable nginx
+Stat $?
 Print "Starting Nginx"
 systemctl start nginx
+Stat $?
 exit
 #Let's download the HTDOCS content and deploy under the Nginx path.
 
