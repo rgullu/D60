@@ -15,6 +15,7 @@ xyz(){
 a=10
 #abc Gullu
 abc $1
+echo exit command status $?
 echo b in main = $b
 xyz
 
