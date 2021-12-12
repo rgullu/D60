@@ -13,16 +13,18 @@ Print "Starting Nginx"
 systemctl start nginx &>>$LOG
 Stat $?
 
-exit
-#Let's download the HTDOCS content and deploy under the Nginx path.
+Print "Download Html Page"
+curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>$LOG
+Stat $?
 
-curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+Print "Remove Old Html Pages"
+rm -rf /usr/share/nginx/html/*
+Stat $?
 
-cd /usr/share/nginx/html
-rm -rf *
-unzip /tmp/frontend.zip
-mv frontend-main/* .
-mv static/* .
-rm -rf frontend-master static README.md
-mv localhost.conf /etc/nginx/default.d/roboshop.conf
-systemctl restart nginx
+#rm -rf *
+#unzip /tmp/frontend.zip
+#mv frontend-main/* .
+#mv static/* .
+#rm -rf frontend-master static README.md
+#mv localhost.conf /etc/nginx/default.d/roboshop.conf
+#systemctl restart nginx
