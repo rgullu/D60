@@ -13,7 +13,7 @@ xyz(){
 }
 # Calling main funciton
 a=10
-abc
+abc Gullu
 echo b in main = $b
 xyz
 
