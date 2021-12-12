@@ -3,12 +3,13 @@ Print(){
   echo -n -e "\e[1m$1\e[0m .... "
   echo -e "\n\e[36m================== $1 ==================\e[0m" >>$LOG
 }
+
 Stat(){
   if [ $1 -eq 0 ]; then
     echo -e "\e[1;32mSUCCESS\e[0m"
   else
     echo -e "\e[1;31mFAILURE\e[0m"
-    echo -e "\e[1;33mHey check the logs from the $LOG file\e[0m"
+    echo -e "\e[1;33mHey script failed, please check the logs from the $LOG file.\e[0m"
     exit 1
   fi
 }
@@ -19,12 +20,15 @@ rm -f $LOG
 Print "Installing Nginx"
 yum install nginxx -y &>>$LOG
 Stat $?
+
 Print "Enabling Nginx"
 systemctl enable nginx
 Stat $?
+
 Print "Starting Nginx"
 systemctl start nginx
 Stat $?
+
 exit
 #Let's download the HTDOCS content and deploy under the Nginx path.
 
