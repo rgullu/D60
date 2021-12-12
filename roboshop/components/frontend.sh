@@ -15,6 +15,8 @@ Stat $?
 
 Print "Extract Frontend Archive"
 unzip -o -d /tmp /tmp/frontend.zip &>>$LOG
+ls
+pwd
 Stat $?
 
 Print "Copy files to Nginx path"
