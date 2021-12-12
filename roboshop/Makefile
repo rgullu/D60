@@ -8,24 +8,27 @@ help:
             help_info=`echo $${help_split[2]} | sed -e 's/^ *//' -e 's/ *$$//'` ; \
             printf "%-15s %s\n" $$help_command $$help_info ; \
         done
-cart: ## Setup cart component
+
+git-pull:
+	@git pull &>/dev/nul
+cart: git-pull ## Setup cart component
 	@bash components/cart.sh
-catalogue: ## Setup catalogue component
+catalogue: git-pull ## Setup catalogue component
 	@bash components/catalogue.sh
-user: ## Setup user component
+user: git-pull ## Setup user component
 	@bash components/user.sh
-shipping: ## Setup shipping component
+shipping: git-pull ## Setup shipping component
 	@bash components/shipping.sh
-payment: ## Setup payment component
+payment: git-pull ## Setup payment component
 	@bash components/payment.sh
-frontend: ## Setup frontend component
+frontend: git-pull ## Setup frontend component
 	@bash components/frontend.sh
-mysql: ## Setup mysql component
+mysql: git-pull ## Setup mysql component
 	@bash components/mysql.sh
-redis: ## Setup redis component
+redis: git-pull ## Setup redis component
 	@bash components/redis.sh
-rabbitmq: ## Setup rabbitmq component
+rabbitmq: git-pull ## Setup rabbitmq component
 	@bash components/rabitmq.sh
-mongodb: ## Setup mongodb component
+mongodb: git-pull ## Setup mongodb component
 	@bash components/mongodb.sh
 
