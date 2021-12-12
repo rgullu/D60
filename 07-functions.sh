@@ -7,6 +7,7 @@ function abc(){
   echo a in function = $a
   b=20
   echo First argument in function = $1
+  return 20
 }
 xyz(){
   echo I am a funciton xyz
@@ -15,7 +16,7 @@ xyz(){
 a=10
 #abc Gullu
 abc $1
-echo exit command status $?
+echo exit command status - $?
 echo b in main = $b
 xyz
 
