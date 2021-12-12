@@ -22,7 +22,7 @@ mv /tmp/frontend-main/static/* /usr/share/nginx/html/. &>>$LOG
 Stat $?
 
 Print "Copy Nginx Roboshop Config file"
-cp /tmp/frontedn-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>$LOG
+cp /tmp/frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf &>>$LOG
 Stat $?
 
 Print "Enabling Nginx"
