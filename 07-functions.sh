@@ -6,6 +6,7 @@ function abc(){
   a=100
   echo a in function = $a
   b=20
+  echo First argument in function = $1
 }
 xyz(){
   echo I am a funciton xyz
@@ -15,3 +16,5 @@ a=10
 abc
 echo b in main = $b
 xyz
+
+echo First argument in Main program = $1
