@@ -1,3 +1,4 @@
+#!/bin/bash
 help:
 	@IFS=$$'\n' ; \
         help_lines=(`fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//'`); \
@@ -11,7 +12,7 @@ help:
 
 git-pull:
 	@echo -----------+Pulling Git Code+-------------
-	@sudo git pull &>/dev/nul
+	@git pull &>/dev/nul
 cart: git-pull ## Setup cart component
 	@sudo bash components/cart.sh
 catalogue: git-pull ## Setup catalogue component
