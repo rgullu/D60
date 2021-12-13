@@ -1,6 +1,5 @@
 #!/bin/bash
 Print(){
-  echo $1
   LSPACE=$(echo $1 | awk '{print length}')
   SPACE=$(($MSPACE-$LSPACE))
   SPACES=""
