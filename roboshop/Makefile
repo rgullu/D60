@@ -12,7 +12,7 @@ help:
 
 git-pull:
 	@echo -----------+Pulling Git Code+-------------
-	@git pull &>/dev/nul
+	@git pull &>/dev/null
 cart: git-pull ## Setup cart component
 	@sudo bash components/cart.sh
 catalogue: git-pull ## Setup catalogue component
