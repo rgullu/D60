@@ -1,9 +1,9 @@
 #!/bin/bash
 source components/common.sh
 
-cat $0 | grep ^Print | awk -F '"' '{print $2}' | awk '{ print length }'|sort
+MSPACE=$(cat $0 | grep ^Print | awk -F '"' '{print $2}' | awk '{ print length }'|sort|tail -1)
 
-exit
+#exit
 
 Print "Installing NodeJS"
 yum install nodejs make gcc-c++ -y &>>$LOG
