@@ -68,10 +68,10 @@ NODEJS(){
   Stat $?
 
   Print "Copy SystemD file"
-  mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service &>>$LOG
+  mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service &>>$LOG
   Stat $?
 
-  Print "Start Catalogue Service"
-  systemctl daemon-reload &>>$LOG && systemctl restart catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
+  Print "Start ${COMPONENT_NAME} Service"
+  systemctl daemon-reload &>>$LOG && systemctl restart ${COMPONENT} &>>$LOG && systemctl enable ${COMPONENT} &>>$LOG
   Stat $?
 }

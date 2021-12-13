@@ -7,8 +7,6 @@ COMPONENT=user
 
 NODEJS
 
-
-
 Print "Checking DB Connections from APP"
 sleep 5
 STAT=$(curl -s localhost:8080/health|jq .mongo)

@@ -7,18 +7,6 @@ COMPONENT=catalogue
 
 NODEJS
 
-Print "Update DNS record in SystemD config"
-sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal/" /home/roboshop/catalogue/systemd.service &>>$LOG
-Stat $?
-
-Print "Copy SystemD file"
-mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service &>>$LOG
-Stat $?
-
-Print "Start Catalogue Service"
-systemctl daemon-reload &>>$LOG && systemctl restart catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
-Stat $?
-
 Print "Checking DB Connections from APP"
 sleep 5
 STAT=$(curl -s localhost:8080/health|jq .mongo)
