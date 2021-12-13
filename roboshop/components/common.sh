@@ -1,5 +1,4 @@
 #!/bin/bash
-
 Print(){
   LSPACE=$(echo $1 | awk '{print length}')
   SPACE=$(($MSPACE-$LSPACE))
@@ -8,7 +7,6 @@ Print(){
     SPACES="$SPACES$(echo ' ')"
     SPACE=$(($SPACE-1))
   done
-  echo $SPACES | cat -A
   echo -n -e "\e[1m$1${SPACES}\e[0m .... "
   echo -e "\n\e[36m================== $1 ==================\e[0m" >>$LOG
 }
