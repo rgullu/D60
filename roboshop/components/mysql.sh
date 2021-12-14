@@ -21,19 +21,13 @@ DEFAULT_PASSWORD=$(grep "temporary password" /var/log/mysqld.log | awk '{print $
 NEW_PASSWORD="RoboShop@1"
 
 echo "show databases;" | mysql -uroot -p"${NEW_PASSWORD}" &>>$LOG
-#if [ $? -ne 0 ]; then
-#  Print "Changing the Default Password"
-#  echo -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${NEW_PASSWORD}';\nuninstall plugin validate_password;" >/tmp/pass.sql &>>$LOG
-#  mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" </tmp/pass.sql &>>$LOG
-#  Stat $?
-#fi
-
 if [ $? -ne 0 ]; then
   Print "Changing the Default Password"
   echo -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${NEW_PASSWORD}';\nuninstall plugin validate_password;" >/tmp/pass.sql
   mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" </tmp/pass.sql &>>$LOG
   Stat $?
 fi
+
 
 
 #> uninstall plugin validate_password;
