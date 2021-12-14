@@ -28,20 +28,8 @@ if [ $? -ne 0 ]; then
   Stat $?
 fi
 
+DOWNLOAD "/tmp"
 
-
-#> uninstall plugin validate_password;
-#Setup Needed for Application.
-#As per the architecture diagram, MySQL is needed by
-#
-#Shipping Service
-#So we need to load that schema into the database, So those applications will detect them and run accordingly.
-#
-#To download schema, Use the following command
-#
-## curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
-#Load the schema for Services.
-#
 ## cd /tmp
 ## unzip mysql.zip
 ## cd mysql-main
