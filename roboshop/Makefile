@@ -30,7 +30,7 @@ mysql: git-pull ## Setup mysql component
 redis: git-pull ## Setup redis component
 	@sudo bash components/redis.sh
 rabbitmq: git-pull ## Setup rabbitmq component
-	@sudo bash components/rabitmq.sh
+	@sudo bash components/rabbitmq.sh
 mongodb: git-pull ## Setup mongodb component
 	@sudo bash components/mongodb.sh
 
