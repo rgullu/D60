@@ -23,4 +23,6 @@ if [ "$1" == "all" ]; then
     echo "Creating Instance - $component"
     CREATE $component
   done
+else
+  CREATE $1
 fi
