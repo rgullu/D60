@@ -15,6 +15,3 @@ if [ "$STAT" == "OK" ] ; then
 else
   Stat 1
 fi
-
-Print "$STAT"
-Stat $?
