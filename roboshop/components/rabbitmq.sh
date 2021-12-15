@@ -2,8 +2,8 @@
 source components/common.sh
 MSPACE=$(cat $0 | grep Print | awk -F '"' '{print $2}' | awk '{ print length }'|sort|tail -1)
 
-COMPONENT_NAME=Shipping
-COMPONENT=shipping
+COMPONENT_NAME=RabbitMQ
+COMPONENT=rabbitmq
 
 Print "Install Erlang"
 yum list installed | grep "erlang" &>>$LOG
@@ -24,7 +24,7 @@ Print "Start RabbitMQ"
 systemctl enable rabbitmq-server &>>$LOG && systemctl start rabbitmq-server &>>$LOG
 Stat $?
 
-Print "Create Application User"
+Print "Setup Application User"
 rabbitmqctl list_users | grep "roboshop" &>>$LOG
 if [ $? -ne 0 ] ; then
   rabbitmqctl add_user roboshop roboshop123 &>>$LOG && rabbitmqctl set_user_tags roboshop administrator &>>$LOG && rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>$LOG
