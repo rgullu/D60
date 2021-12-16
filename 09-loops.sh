@@ -15,5 +15,17 @@ for fruit in apple banana orange peach ; do
   echo Fruit Name = $fruit
 done
 
+# While loop example.
+echo -n "Checking connection on port 22 for Host $1"
+while true; do
+  nc -z $1 22 &>/dev/null
+  if [ $? -eq 0 ]; then
+    break
+  fi
+  sleep 1
+  echo -n "."
+done
+
+
 
 
