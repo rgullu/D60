@@ -7,5 +7,5 @@
       ansible.builtin.debug:
         msg: URS in Task1 = {{URL}}
     - name: Access URL in Task2
-        ansible.builtin.debug:
-          msg: URS in Task2 = {{URL}}
+      ansible.builtin.debug:
+        msg: URS in Task2 = {{URL}}
