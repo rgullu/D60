@@ -1,3 +1,4 @@
+## Declare variable in play level then all the tasks can access that variables.
 - name: Play level variables.
   hosts: all
   vars:
@@ -10,7 +11,7 @@
       ansible.builtin.debug:
         msg: URL in Task2 = {{URL}}
 
-## Declare variable in play level then all the tasks can access that variables.
+## File level variables.
 
 - name: Demo on file variables.
   hosts: all
@@ -20,3 +21,6 @@
     - name: Access URL
       ansible.builtin.debug:
         msg: URL = {{URL}}
+
+## Declaring task level variables.
+
