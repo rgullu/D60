@@ -1,0 +1,5 @@
+- name: Download {{COMPONENT}} Code
+  ansible.builtin.unarchive:
+    src: https://example.com/example.zip
+    dest: /usr/local/bin
+    remote_src: yes
