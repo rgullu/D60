@@ -23,4 +23,12 @@
         msg: URL = {{URL}}
 
 ## Declaring task level variables.
+- name: Demo on task variables.
+  hosts: all
+  tasks:
+    - name: Access URL from task var
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
+      vars:
+        URL: task.google.com
 
