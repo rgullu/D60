@@ -3,3 +3,8 @@
   become: true
   roles:
     - frontend
+
+- name: Start Nginx Service
+  ansible.builtin.systemd:
+    state: started
+    name: httpd
