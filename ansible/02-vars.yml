@@ -53,6 +53,8 @@
 # Demo for Precedence.
 - name: Demo for Precedence.
   hosts: all
+  vars:
+    URL1=paly.example.com
   tasks:
     - name: Print URL1
       ansible.builtin.debug:
