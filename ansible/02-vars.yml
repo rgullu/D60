@@ -35,4 +35,3 @@
 #      ansible.builtin.debug:
 #        msg: URL = {{URL}}
 # You can declare the variables on task, but the scope is only that task.
--
