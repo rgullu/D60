@@ -50,3 +50,10 @@
     - name: Access URL from CLI
       ansible.builtin.debug:
         msg: URL = {{URL}}
+# Demo for Precedence.
+- name: Demo for Precedence.
+  hosts: all
+  tasks:
+    - name: Print URL1
+      ansible.builtin.debug:
+        msg: URL1 = {{URL1}}
