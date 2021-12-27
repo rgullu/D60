@@ -1,3 +1,4 @@
-- name: Print Frontend
-  debug:
-    msg: Frontend
+- name: Install Nginx
+  yum:
+    name: nginx
+    state: latest
