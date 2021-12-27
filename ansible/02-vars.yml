@@ -31,7 +31,8 @@
         msg: URL = {{URL}}
       vars:
         URL: task.google.com
-    - name: Access URL from previous task
-      ansible.builtin.debug:
-        msg: URL = {{URL}}
-
+#    - name: Access URL from previous task
+#      ansible.builtin.debug:
+#        msg: URL = {{URL}}
+# You can declare the variables on task, but the scope is only that task.
+-
