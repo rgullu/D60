@@ -1,55 +1,55 @@
-## Declare variable in play level then all the tasks can access that variables.
-- name: Play level variables.
-  hosts: all
-  vars:
-    URL: play.example.com
-  tasks:
-    - name: Access URL in Task1
-      ansible.builtin.debug:
-        msg: URL in Task1 = {{URL}}
-    - name: Access URL in Task2
-      ansible.builtin.debug:
-        msg: URL in Task2 = {{URL}}
-
-## File level variables.
-
-- name: Demo on file variables.
-  hosts: all
-  vars_files:
-    - sample-vars.yml
-  tasks:
-    - name: Access URL
-      ansible.builtin.debug:
-        msg: URL = {{URL}}
-
-## Declaring task level variables.
-# You can declare the variables on task, but the scope is only that task.
-- name: Demo on task variables.
-  hosts: all
-  tasks:
-    - name: Access URL from task var
-      ansible.builtin.debug:
-        msg: URL = {{URL}}
-      vars:
-        URL: task.google.com
-#    - name: Access URL from previous task
+### Declare variable in play level then all the tasks can access that variables.
+#- name: Play level variables.
+#  hosts: all
+#  vars:
+#    URL: play.example.com
+#  tasks:
+#    - name: Access URL in Task1
+#      ansible.builtin.debug:
+#        msg: URL in Task1 = {{URL}}
+#    - name: Access URL in Task2
+#      ansible.builtin.debug:
+#        msg: URL in Task2 = {{URL}}
+#
+### File level variables.
+#
+#- name: Demo on file variables.
+#  hosts: all
+#  vars_files:
+#    - sample-vars.yml
+#  tasks:
+#    - name: Access URL
 #      ansible.builtin.debug:
 #        msg: URL = {{URL}}
-
-# Declare the variables on Inventory file.
-- name: Demo on Inventory variables.
-  hosts: all
-  tasks:
-    - name: Access URL from Inventory file
-      ansible.builtin.debug:
-        msg: URL = {{URL}}
-# Demo on CLI variables.
-- name: Demo on CLI variables.
-  hosts: all
-  tasks:
-    - name: Access URL from CLI
-      ansible.builtin.debug:
-        msg: URL = {{URL}}
+#
+### Declaring task level variables.
+## You can declare the variables on task, but the scope is only that task.
+#- name: Demo on task variables.
+#  hosts: all
+#  tasks:
+#    - name: Access URL from task var
+#      ansible.builtin.debug:
+#        msg: URL = {{URL}}
+#      vars:
+#        URL: task.google.com
+##    - name: Access URL from previous task
+##      ansible.builtin.debug:
+##        msg: URL = {{URL}}
+#
+## Declare the variables on Inventory file.
+#- name: Demo on Inventory variables.
+#  hosts: all
+#  tasks:
+#    - name: Access URL from Inventory file
+#      ansible.builtin.debug:
+#        msg: URL = {{URL}}
+## Demo on CLI variables.
+#- name: Demo on CLI variables.
+#  hosts: all
+#  tasks:
+#    - name: Access URL from CLI
+#      ansible.builtin.debug:
+#        msg: URL = {{URL}}
 # Demo for Precedence.
 - name: Demo for Precedence.
   hosts: all
