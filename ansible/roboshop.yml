@@ -3,9 +3,3 @@
   become: true
   roles:
     - frontend
-
-- name: Start Nginx Service
-  ansible.builtin.systemd:
-    state: restarted
-    name: nginx
-    enabled: yes
