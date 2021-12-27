@@ -54,7 +54,7 @@
 - name: Demo for Precedence.
   hosts: all
   vars:
-    URL1=play.example.com
+    URL1: play.example.com
   tasks:
     - name: Print URL1
       ansible.builtin.debug:
