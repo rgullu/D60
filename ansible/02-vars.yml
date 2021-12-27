@@ -50,16 +50,25 @@
 #    - name: Access URL from CLI
 #      ansible.builtin.debug:
 #        msg: URL = {{URL}}
-# Demo for Precedence.
-- name: Demo for Precedence.
+
+
+## Demo for Precedence.
+#- name: Demo for Precedence.
+#  hosts: all
+#  vars:
+#    URL1: play.example.com
+#  vars_files:
+#    - sample-vars.yml
+#  tasks:
+#    - name: Print URL1
+#      ansible.builtin.debug:
+#        msg: URL1 = {{URL1}}
+#      vars:
+#        URL1: task.example.com
+
+- name: Print facts
   hosts: all
-  vars:
-    URL1: play.example.com
-  vars_files:
-    - sample-vars.yml
   tasks:
-    - name: Print URL1
+    - name: Print a fact
       ansible.builtin.debug:
-        msg: URL1 = {{URL1}}
-      vars:
-        URL1: task.example.com
+        msg: "HOST OS = {{ansible_distribution}}"
