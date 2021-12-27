@@ -23,6 +23,7 @@
         msg: URL = {{URL}}
 
 ## Declaring task level variables.
+# You can declare the variables on task, but the scope is only that task.
 - name: Demo on task variables.
   hosts: all
   tasks:
@@ -34,4 +35,13 @@
 #    - name: Access URL from previous task
 #      ansible.builtin.debug:
 #        msg: URL = {{URL}}
-# You can declare the variables on task, but the scope is only that task.
+
+# Declare the variables on Inventory file.
+- name: Demo on Inventory variables.
+  hosts: all
+  tasks:
+    - name: Access URL from Inventory file
+      ansible.builtin.debug:
+        msg: URL = {{URL}}
+
+
