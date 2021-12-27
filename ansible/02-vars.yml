@@ -61,3 +61,5 @@
     - name: Print URL1
       ansible.builtin.debug:
         msg: URL1 = {{URL1}}
+      vars:
+        URL1: task.example.com
