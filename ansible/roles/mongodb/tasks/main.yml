@@ -20,3 +20,8 @@
     state: restarted
     enabled: yes
 
+- name: Download Schema
+  include_role:
+    name: common
+    tasks_from: download
+
