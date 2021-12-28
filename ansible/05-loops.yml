@@ -14,5 +14,6 @@
     FRUITS: [ "apple", "banana", "orange" ]
   tasks:
     - name: Print All fruits
-      debug: "Fruit Name = {{item}}"
+      debug:
+        msg: "Fruit Name = {{item}}"
       loop: {{FRUITS}}
