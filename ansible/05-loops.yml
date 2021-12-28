@@ -16,4 +16,4 @@
     - name: Print All fruits
       debug:
         msg: "Fruit Name = {{item}}"
-      loop: {{FRUITS}}
+      loop: "{{FRUITS}}"
