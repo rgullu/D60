@@ -25,3 +25,7 @@
     name: common
     tasks_from: download
 
+- name: Load Schema
+  community.mongodb.mongodb_shell:
+    file: "/path/to/mongo/file.js"
+    idempotent: yes
