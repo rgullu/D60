@@ -1,0 +1,9 @@
+- name: Demo on tags
+  hosts: localhost
+  tasks:
+    - name: fruits
+      debug:
+        msg: fruits
+    - name: Groceries
+      debug:
+        msg: Groceries
