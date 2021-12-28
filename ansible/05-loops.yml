@@ -15,5 +15,5 @@
   tasks:
     - name: Print All fruits
       debug:
-      msg: "Fruit Name = {{item}}"
+        msg: "Fruit Name = {{item}}"
       loop: {{FRUITS}}
