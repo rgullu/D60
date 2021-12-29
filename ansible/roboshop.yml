@@ -18,3 +18,10 @@
   tags: catalogue
   roles:
     - catalogue
+
+- name: Setup Catalogue
+  hosts: catalogue
+  become: true
+  tags: catalogue
+  roles:
+    - catalogue
