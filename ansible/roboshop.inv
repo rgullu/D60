@@ -2,6 +2,8 @@
 frontend-dev.roboshop.internal
 [cart]
 cart-dev.roboshop.internal
+[user]
+user-dev.roboshop.internal
 [catalogue]
 catalogue-dev.roboshop.internal
 [payment]
