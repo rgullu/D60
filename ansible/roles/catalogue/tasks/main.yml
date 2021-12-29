@@ -33,6 +33,7 @@
   template:
     src: systemd.service
     dest: /etc/systemd/system/catalogue.service
+    remote_src: yes
 
 - name: Start Catalogue Service
   ansible.builtin.systemd:
