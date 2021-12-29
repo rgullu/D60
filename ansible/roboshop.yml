@@ -19,9 +19,9 @@
   roles:
     - catalogue
 
-- name: Setup Catalogue
-  hosts: catalogue
+- name: Setup Redis
+  hosts: redis
   become: true
-  tags: catalogue
+  tags: redis
   roles:
-    - catalogue
+    - redis
