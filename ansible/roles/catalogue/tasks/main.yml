@@ -30,7 +30,7 @@
   become_user: roboshop
 
 - name: Update systemd file
-  ansible.builtin.template:
+  template:
     src: systemd.service
     dest: /etc/systemd/system/catalogue.service
 
