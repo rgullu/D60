@@ -18,8 +18,7 @@
 
 - name: Add roboshop app user
   ansible.builtin.user:
-    user:
-      name: roboshop
+    name: roboshop
 
 - name: Download Code
   ansible.builtin.include_role:
