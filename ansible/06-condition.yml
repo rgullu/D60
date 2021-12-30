@@ -1,0 +1,9 @@
+- name: Condistions
+  hosts: localhost
+  vars:
+    URL: google.com
+  tasks:
+    - name: Condition on String
+      debug:
+        msg: "{{URL}}"
+      when URL == "google.co.in"
