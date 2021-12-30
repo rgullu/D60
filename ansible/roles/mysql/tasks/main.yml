@@ -56,9 +56,9 @@
   register: check_new_password
   ignore_errors: yes
 
-- name: print
-  debug:
-    msg: "{{check_new_password}}"
+#- name: print
+#  debug:
+#    msg: "{{check_new_password}}"
 
 - name: Copy Password reset sql file
   ansible.builtin.template:
