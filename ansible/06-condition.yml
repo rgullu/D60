@@ -6,4 +6,4 @@
     - name: Condition on String
       debug:
         msg: "{{URL}}"
-      when: URL == "google.co.in"
+      when: URL == "google.co.in" or URL == "google.com"
