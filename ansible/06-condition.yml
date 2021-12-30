@@ -3,6 +3,7 @@
   vars:
     URL: "google.com"
     COUNT: 2
+    CASE: false
   tasks:
     - name: Condition on String
       debug:
@@ -13,3 +14,8 @@
       debug:
         msg: "{{COUNT}}"
       when: COUNT >= 2
+
+    - name: Boolean
+      debug:
+        msg: "Hey"
+      when: CASE
