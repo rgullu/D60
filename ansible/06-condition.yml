@@ -1,7 +1,7 @@
 - name: Condistions
   hosts: localhost
   vars:
-    URL: google.com
+    URL: "google.com"
   tasks:
     - name: Condition on String
       debug:
