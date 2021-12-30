@@ -1,0 +1,29 @@
+#    Update the roboshop user and group id in payment.ini file.
+#
+#    Setup the service
+#
+#  # mv /home/roboshop/payment/systemd.service /etc/systemd/system/payment.service
+#  # systemctl daemon-reload
+#  # systemctl enable payment
+#  # systemctl start payment
+
+- name: Install Python
+  yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: present
+
+- name: Download Code
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: download
+  vars:
+    APP_LOCATION: "/home/roboshop/{{COMPONENT}}"
+    APP_USER: roboshop
+
+- name: Install Python Dependencis
+  pip:
+    requirements: "/home/roboshop/{{COMPONENT}}/requirements.txt"
+    executable: pip3
