@@ -30,7 +30,7 @@
 
 - name: print
   debug:
-    msg: "{{app_user_info.uid}}"
+    msg: "{{app_user_info}}"
 
 - name: Change UID in INI file
   ansible.builtin.lineinfile:
