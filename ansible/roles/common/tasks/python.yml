@@ -32,7 +32,6 @@
   debug:
     msg: "{{app_user_info.uid}}"
 
-
 - name: Change UID in INI file
   ansible.builtin.lineinfile:
     path: "/home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini"
@@ -43,5 +42,5 @@
   ansible.builtin.lineinfile:
     path: "/home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini"
     regexp: '^gid'
-    line: gid = {{app_user_info.gid}}
+    line: gid = {{app_user_info.group}}
 
