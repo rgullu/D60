@@ -1,14 +1,3 @@
-#$ mv shipping-main shipping
-#$ cd shipping
-#$ mvn clean package
-#$ mv target/shipping-1.0.jar shipping.jar
-#Update Servers IP address in /home/roboshop/shipping/systemd.service
-#Copy the service file and start the service.
-## mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
-## systemctl daemon-reload
-## systemctl start shipping
-## systemctl enable shipping
-
 - name: Install Maven
   yum:
     name: maven
@@ -23,7 +12,9 @@
     APP_USER: roboshop
 
 - name: Make maven package
-  shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+  ansible.builtin.shell:
+    cmd: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+    chdir: "/home/roboshop/{{COMPONENT}}"
   become_user: roboshop
 
 - name: Download SystemD
