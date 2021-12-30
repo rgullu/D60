@@ -47,12 +47,12 @@
   roles:
     - mysql
 
-#- name: Setup Shipping
-#  hosts: shipping
-#  become: true
-#  tags: shipping
-#  roles:
-#    - shipping
+- name: Setup Shipping
+  hosts: shipping
+  become: true
+  tags: shipping
+  roles:
+    - shipping
 #
 #- name: Setup RabbitMQ
 #  hosts: rabbitmq

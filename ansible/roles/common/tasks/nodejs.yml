@@ -3,19 +3,12 @@
     name: [ "nodejs", "make", "gcc-c++" ]
     state: present
 
-- name: Add roboshop app user
-  ansible.builtin.user:
-    name: roboshop
-
 - name: Download Code
   ansible.builtin.include_role:
     name: common
     tasks_from: download
-
-- name: Remove existing code
-  ansible.builtin.file:
-    path: /home/roboshop/{{COMPONENT}}
-    state: absent
+  vars:
+    APP_LOCATION: "/home/roboshop/{{COMPONENT}}"
 
 - name: Copy App Code
   ansible.builtin.copy:
