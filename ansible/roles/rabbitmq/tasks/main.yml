@@ -1,21 +1,26 @@
-- name: Install redis repos
+- name: Setup Repos for RabbitmQ
+  shell: curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+
+- name: Install Erlang
   yum:
-    name: http://rpms.remirepo.net/enterprise/remi-release-7.rpm
-    state: present
+    - https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erlang-23.2.6-1.el7.x86_64.rpm
+    - install rabbitmq-server
+  state: present
 
-- name: Install redis
-  yum:
-    name: redis
-    enablerepo: remi
-
-- name: Update Redis Listen address
-  replace:
-    path: /etc/redis.conf
-    regexp: "127.0.0.1"
-    replace: 0.0.0.0
-
-- name: Start redis
+- name: Start RabbitMQ Server
   systemd:
-    name: redis
-    state: restarted
+    name: rabbitmq-server
+    state: started
     enabled: yes
+
+- name: Setup Roboshop User
+  community.rabbitmq.rabbitmq_user:
+    user: roboshop
+    password: roboshop123
+    tags: administrator
+    permissions:
+      - vhost: /
+        configure_priv: .*
+        read_priv: .*
+        write_priv: .*
+    state: present
