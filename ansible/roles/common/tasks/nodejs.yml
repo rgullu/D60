@@ -10,13 +10,6 @@
   vars:
     APP_LOCATION: "/home/roboshop/{{COMPONENT}}"
 
-- name: Copy App Code
-  ansible.builtin.copy:
-    src: /tmp/{{COMPONENT}}-main/
-    dest: /home/roboshop/{{COMPONENT}}
-    remote_src: yes
-  become_user: roboshop
-
 - name: Install Nodejs dependencies
   community.general.npm:
     path: /home/roboshop/{{COMPONENT}}
