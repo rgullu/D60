@@ -26,3 +26,7 @@
   shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
   become_user: roboshop
 
+- name: Download SystemD
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: systemd
