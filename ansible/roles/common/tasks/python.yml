@@ -28,10 +28,6 @@
     requirements: "/home/roboshop/{{COMPONENT}}/requirements.txt"
     executable: pip3
 
-- name: print
-  debug:
-    msg: "{{app_user_info}}"
-
 - name: Change UID in INI file
   ansible.builtin.lineinfile:
     path: "/home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini"
@@ -43,4 +39,10 @@
     path: "/home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini"
     regexp: '^gid'
     line: gid = {{app_user_info.group}}
+
+- name: Download SystemD
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: systemd
+
 
