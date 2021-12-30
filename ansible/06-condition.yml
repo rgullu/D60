@@ -3,7 +3,7 @@
   vars:
     URL: "google.com"
     COUNT: 2
-    CASE: true
+    CASE: false
   tasks:
     - name: Condition on String
       debug:
