@@ -2,8 +2,14 @@
   hosts: localhost
   vars:
     URL: "google.com"
+    COUNT: 2
   tasks:
     - name: Condition on String
       debug:
         msg: "{{URL}}"
       when: URL == "google.co.in" or URL == "google.com"
+
+    - name: Condition on Numbers
+      debug:
+        msg: "{{COUNT}}"
+      when: COUNT >= 2
