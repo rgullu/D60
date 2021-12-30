@@ -55,3 +55,7 @@
   ansible.builtin.shell: echo 'show databases;' | mysql -uroot -p"{{NEW_PASSWORD}}"
   register: check_new_password
   ignore_errors: yes
+
+- name: print
+  debug:
+    msg: "{{check_new_password}}"
