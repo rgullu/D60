@@ -59,3 +59,10 @@
 - name: print
   debug:
     msg: "{{check_new_password}}"
+
+- name: Copy Password reset sql file
+  ansible.builtin.template:
+    src: pass.sql
+    dest: /tmp/pass.sql
+  when: check_new_password.failed
+
